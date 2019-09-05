@@ -1,6 +1,6 @@
 {% load static %}
 <nav id="navbar" class="navbar navbar-default navbar-expand-md navbar-dark">
-  <a class="navbar-brand" href="#">
+  <a class="navbar-brand" href="{% url 'home:index' %}">
     <img src="{% static 'home/img/logo_128x70.png' %}" alt="Out at Wrigley">
   </a>
   <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -9,16 +9,19 @@
   <div class="collapse navbar-collapse" id="navbarCollapse">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <a class="nav-link" href="#">About Us</a>
+        <a class="nav-link" href="{% url 'home:index' %}">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">National Anthem/First Pitch</a>
+        <a class="nav-link" href="{% url 'home:about' %}">About Us</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Sponsors</a>
+        <a class="nav-link" href="{% url 'home:contests' %}">Contests</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Buy Tickets</a>
+        <a class="nav-link" href="{% url 'home:sponsors' %}">Sponsors</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'home:tickets' %}">Buy Tickets</a>
       </li>
     </ul>
   </div>

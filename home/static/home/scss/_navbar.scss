@@ -8,7 +8,9 @@ nav {
   }
 
   button:active,
-  button:focus {
+  button:focus,
+  .list-item:active,
+  .list-item:focus {
     outline: none;
   }
 

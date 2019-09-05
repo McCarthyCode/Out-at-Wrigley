@@ -10,11 +10,33 @@ def index(request):
     dropdown = []
     for i in range(0, 19):
         dropdown.append(2019 - i)
-    # for i in range(2018, 2001):
-    #     dropdown.append(i)
 
     return render(request, 'home/index.html', {
         'name': 'Out at Wrigley',
         'year': datetime.now(tz).year,
         'dropdown': dropdown,
+    })
+
+def about(request):
+    return render(request, 'home/about.html', {
+        'name': 'Out at Wrigley',
+        'year': datetime.now(tz).year,
+    })
+
+def contests(request):
+    return render(request, 'home/contests.html', {
+        'name': 'Out at Wrigley',
+        'year': datetime.now(tz).year,
+    })
+
+def sponsors(request):
+    return render(request, 'home/sponsors.html', {
+        'name': 'Out at Wrigley',
+        'year': datetime.now(tz).year,
+    })
+
+def tickets(request):
+    return render(request, 'home/tickets.html', {
+        'name': 'Out at Wrigley',
+        'year': datetime.now(tz).year,
     })
