@@ -1,0 +1,17 @@
+#leaderboardTop, 
+#leaderboardBottom,
+#largeMobileBanner1,
+#largeMobileBanner2 {
+  text-align: center;
+}
+
+#rectangles {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+
+  a {
+    margin-top: 1rem;
+  }
+}

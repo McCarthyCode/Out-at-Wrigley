@@ -1,0 +1,43 @@
+nav {
+  font-family: $font-title;
+  background-color: $background-color;
+
+  button {
+    border: none;
+    color: $text-color !important;
+  }
+
+  button:active,
+  button:focus {
+    outline: none;
+  }
+
+  .nav-item {
+    text-align: center;
+
+    a.nav-link {
+      background-color: #666;
+      border-radius: 4px;
+      margin-top: 0.5rem;
+      color: $text-color !important;
+    }
+  
+    a.nav-link:hover {
+      color: $text-hover-color !important;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-md) {
+  nav {
+    .nav-item {
+      a.nav-link {
+        background-color: $background-color;
+        margin-top: 0;
+        padding: 0 0.5rem;
+        line-height: 70px;
+        vertical-align: middle;
+      }
+    }
+  }
+}

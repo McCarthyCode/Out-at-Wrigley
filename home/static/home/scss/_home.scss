@@ -1,0 +1,35 @@
+#grid {
+  display: grid;
+  grid-template-columns: auto;
+  grid-gap: 1rem;
+}
+
+#cover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: $breakpoint-xl) {
+  #grid {
+    grid-template-columns: 1110px - 160px - 16px 160px;
+  }
+}
+
+@media (min-width: $breakpoint-lg) and (max-width: $breakpoint-xl - 1) {
+  #grid {
+    grid-template-columns: 930px - 160px - 16px 160px;
+  }
+}
+
+@media (min-width: $breakpoint-lg) {
+  #cover {
+    height: 507px;
+  }
+}
+
+@media (min-width: 350px) {
+  .container {
+    padding: 0 15px;
+  }
+}

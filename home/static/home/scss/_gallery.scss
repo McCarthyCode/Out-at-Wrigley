@@ -1,0 +1,76 @@
+$gallery-height: 300px;
+
+$nav-size: 50px;
+$nav-background-color: #666666;
+
+$dropdown-height: 2 * 16px;
+$dropdown-width: 54px + $dropdown-height;
+$dropdown-background-color: $nav-background-color;
+
+#gallery {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: $gallery-height;
+  margin-top: 1rem;
+  background-color: #cccccc;
+
+  .nav {
+    display: flex;
+    position: absolute;
+    top: ($gallery-height - $nav-size) / 2;
+    justify-content: center;
+    align-items: center;
+    background-color: $nav-background-color;
+    width: $nav-size;
+    height: $nav-size;
+    border-radius: $nav-size / 2;
+    cursor: pointer;
+    
+    .fa {
+      font-size: 2rem;
+    }
+
+    .fa-chevron-left {
+      margin-left: -4px;
+    }
+
+    .fa-chevron-right {
+      margin-right: -4px;
+    }
+  }
+
+  .nav-left {
+    left: 0;
+  }
+
+  .nav-right {
+    right: 0;
+  }
+
+  .dropdown {
+    font-family: $font-body;
+    position: absolute;
+    top: 0;
+    right: $nav-size + 16px;
+    width: $dropdown-width;
+    height: $dropdown-height;
+    border-radius: $dropdown-height / 2;
+    background-color: $dropdown-background-color;
+    line-height: $dropdown-height;
+    text-align: center;
+    cursor: pointer;
+    overflow: hidden;
+    
+    .scroll {
+      width: 100%;
+      height: $gallery-height - (16px * 2);
+      overflow-y: auto;
+      display: none;
+      
+      li:hover {
+        color: rgba(255, 255, 255, 0.75);
+      }
+    }
+  }
+}

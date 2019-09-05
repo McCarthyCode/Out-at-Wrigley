@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Varela+Round');
+
+@import 'variables';
+@import 'home';
+@import 'ads';
+@import 'navbar';
+@import 'gallery';
+@import 'footer';
+
+body {
+  background-color: $background-color;
+  color: $text-color
+}
+
+.h1, .h3 {
+  font-family: $font-title;
+}
+
+p {
+  font-family: $font-body;
+}
+
+a,
+a:hover,
+.fa-external-link-alt {
+  color: $link-color;
+}
+
+.fa-external-link-alt {
+  vertical-align: 1px;
+  font-size: 9px;
+  cursor: pointer;
+}
+
+.container {
+  padding: 0;
+}
