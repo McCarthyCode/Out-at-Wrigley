@@ -17,7 +17,19 @@ body {
   font-family: $font-title;
 }
 
-p {
+.h1 {
+  margin-top: 2rem;
+}
+
+.h3 {
+  margin-top: 1rem;
+}
+
+.h5 {
+  font-family: $font-body;
+}
+
+p, ul {
   font-family: $font-body;
   line-height: 1.5;
   margin-bottom: 1rem;
@@ -37,4 +49,42 @@ a:hover,
 
 .container {
   padding: 0;
+}
+
+.content {
+  img {
+    width: 300px;
+  }
+
+  img.float-left-sm, img.float-right-sm {
+    display: block;
+    margin: 0 auto 1rem auto;
+    float: none;
+  }
+}
+
+ul.ul {
+  list-style: disc;
+
+  li {
+    margin-left: 20px;
+  }
+}
+
+@media (min-width: $breakpoint-sm) {
+  .content {
+    img.float-left-sm {
+      float: left;
+      padding-right: 2rem;
+    }
+
+    img.float-right-sm {
+      float: right;
+      padding-left: 2rem;
+    }
+
+    img.float-left-sm, img.float-right-sm {
+      margin: 0;
+    }
+  }
 }

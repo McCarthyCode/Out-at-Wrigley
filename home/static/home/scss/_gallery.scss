@@ -27,7 +27,7 @@ $images-max-height: $gallery-height - (2 * $dropdown-height) - 16px;
     height: $nav-size;
     border-radius: $nav-size / 2;
     cursor: pointer;
-    
+
     .fa {
       font-size: 2rem;
     }
@@ -72,7 +72,7 @@ $images-max-height: $gallery-height - (2 * $dropdown-height) - 16px;
       height: $gallery-height - (16px * 2);
       overflow-y: auto;
       display: none;
-      
+
       li:hover {
         color: rgba(255, 255, 255, 0.75);
       }

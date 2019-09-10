@@ -1,10 +1,34 @@
 nav {
   font-family: $font-title;
   background-color: $background-color;
+  position: relative;
+
+  .social {
+    position: absolute;
+    right: 4rem;
+    top: 38px;
+
+    li {
+      display: inline;
+
+      a {
+        color: $text-color;
+        padding: 0 0.25rem;
+      }
+
+      a:hover {
+        color: $text-color-hover;
+      }
+    }
+  }
 
   button {
-    border: none;
+    border: none !important;
     color: $text-color !important;
+  }
+
+  button:hover {
+    color: $text-color-hover !important;
   }
 
   .nav-item {
@@ -16,15 +40,19 @@ nav {
       margin-top: 0.5rem;
       color: $text-color !important;
     }
-  
+
     a.nav-link:hover {
-      color: $text-hover-color !important;
+      color: $text-color-hover !important;
     }
   }
 }
 
 @media (min-width: $breakpoint-md) {
   nav {
+    .social {
+      right: 28rem;
+    }
+
     .nav-item {
       a.nav-link {
         background-color: $background-color;

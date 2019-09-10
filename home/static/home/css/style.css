@@ -51,10 +51,29 @@
 nav {
   font-family: "Varela Round", Helvetica, Arial, sans-serif;
   background-color: black;
+  position: relative;
+}
+nav .social {
+  position: absolute;
+  right: 4rem;
+  top: 38px;
+}
+nav .social li {
+  display: inline;
+}
+nav .social li a {
+  color: white;
+  padding: 0 0.25rem;
+}
+nav .social li a:hover {
+  color: rgba(255, 255, 255, 0.75);
 }
 nav button {
-  border: none;
+  border: none !important;
   color: white !important;
+}
+nav button:hover {
+  color: rgba(255, 255, 255, 0.75) !important;
 }
 nav .nav-item {
   text-align: center;
@@ -70,6 +89,9 @@ nav .nav-item a.nav-link:hover {
 }
 
 @media (min-width: 768px) {
+  nav .social {
+    right: 28rem;
+  }
   nav .nav-item a.nav-link {
     background-color: black;
     margin-top: 0;
@@ -202,8 +224,9 @@ footer .footer-list li {
   border-left: 1px solid white;
 }
 
-.about-header {
-  margin-top: 2rem;
+.about-header img {
+  margin: 1rem 0;
+  width: 100%;
 }
 
 body {
@@ -215,7 +238,19 @@ body {
   font-family: "Varela Round", Helvetica, Arial, sans-serif;
 }
 
-p {
+.h1 {
+  margin-top: 2rem;
+}
+
+.h3 {
+  margin-top: 1rem;
+}
+
+.h5 {
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+
+p, ul {
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   line-height: 1.5;
   margin-bottom: 1rem;
@@ -235,6 +270,36 @@ a:hover,
 
 .container {
   padding: 0;
+}
+
+.content img {
+  width: 300px;
+}
+.content img.float-left-sm, .content img.float-right-sm {
+  display: block;
+  margin: 0 auto 1rem auto;
+  float: none;
+}
+
+ul.ul {
+  list-style: disc;
+}
+ul.ul li {
+  margin-left: 20px;
+}
+
+@media (min-width: 576px) {
+  .content img.float-left-sm {
+    float: left;
+    padding-right: 2rem;
+  }
+  .content img.float-right-sm {
+    float: right;
+    padding-left: 2rem;
+  }
+  .content img.float-left-sm, .content img.float-right-sm {
+    margin: 0;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
