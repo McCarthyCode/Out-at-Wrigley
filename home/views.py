@@ -60,7 +60,7 @@ def tickets(request):
         'year': YEAR,
     })
 
-def gallery(request):
+def image_slider(request):
     if request.method != 'GET':
         return HttpResponseBadRequest()
 
@@ -78,6 +78,6 @@ def gallery(request):
 
     paginator = Paginator(images, per_page)
 
-    return render(request, 'home/gallery_images.html', {
+    return render(request, 'home/image_slider_images.html', {
         'page': paginator.page(page_number),
     })

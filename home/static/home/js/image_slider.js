@@ -2,24 +2,24 @@ $(document).ready(() => {
   var width = $(window).width();
 
   function getImages(context={
-    'year': $('#gallery .year').text(),
-    'page': $('#gallery input[name="page"]').val(),
+    'year': $('#imageSlider .year').text(),
+    'page': $('#imageSlider input[name="page"]').val(),
     'per_page': width < 768 ? 1 : width >= 768 && width < 992 ? 2 : 3,
   }) {
-    $.ajax('/gallery/', {
+    $.ajax('/image_slider/', {
       data: {
-        'year': $('#gallery .year').text(),
-        'page': $('#gallery input[name="page"]').val(),
+        'year': $('#imageSlider .year').text(),
+        'page': $('#imageSlider input[name="page"]').val(),
         'per_page': width < 768 ? 1 : width >= 768 && width < 992 ? 2 : 3,
       },
       statusCode: {
         500: () => {
-          var page = $('#gallery input[name="page"]').val();
-          $('#gallery input[name="page"]').val(page - 1 > 0 ? --page : 1);
+          var page = $('#imageSlider input[name="page"]').val();
+          $('#imageSlider input[name="page"]').val(page - 1 > 0 ? --page : 1);
         }
       },
       success: (data) => {
-        $('#gallery .images').html(data);
+        $('#imageSlider .images').html(data);
       }
     });
   }
@@ -31,45 +31,45 @@ $(document).ready(() => {
     getImages();
   });
 
-  $('#gallery .nav-left').click(() => {
-    var page = $('#gallery input[name="page"]').val();
-    $('#gallery input[name="page"]').val(page - 1 > 0 ? --page : 1);
-    
+  $('#imageSlider .nav-left').click(() => {
+    var page = $('#imageSlider input[name="page"]').val();
+    $('#imageSlider input[name="page"]').val(page - 1 > 0 ? --page : 1);
+
     getImages({
-      'year': $('#gallery .year').text(),
+      'year': $('#imageSlider .year').text(),
       'page': page,
       'per_page': width < 768 ? 1 : width >= 768 && width < 992 ? 2 : 3,
     });
   });
 
-  $('#gallery .nav-right').click(() => {
-    var page = $('#gallery input[name="page"]').val();
-    $('#gallery input[name="page"]').val(++page);
+  $('#imageSlider .nav-right').click(() => {
+    var page = $('#imageSlider input[name="page"]').val();
+    $('#imageSlider input[name="page"]').val(++page);
 
     getImages({
-      'year': $('#gallery .year').text(),
+      'year': $('#imageSlider .year').text(),
       'page': page,
       'per_page': width < 768 ? 1 : width >= 768 && width < 992 ? 2 : 3,
     });
   });
 
   var dropdown = false;
-  var $dropdown = $('#gallery .dropdown');
+  var $dropdown = $('#imageSlider .dropdown');
   var $scroll = $dropdown.children('.scroll');
 
   $dropdown.children('.header').click(() => {
     if (dropdown) {
-      $dropdown.animate({ 
+      $dropdown.animate({
         'height': '2rem',
       }, 500);
     } else {
       $scroll.show();
-      $dropdown.animate({ 
+      $dropdown.animate({
         'height': '330px',
       }, 500).css('background-color', '#666666');
     }
 
-    var $chevron = $('#gallery .dropdown .chevron');
+    var $chevron = $('#imageSlider .dropdown .chevron');
     setTimeout(() => {
       if (dropdown) {
         $chevron.html('<i class="fa fa-chevron-down" aria-hidden="true"></i>');
@@ -78,7 +78,7 @@ $(document).ready(() => {
       } else {
         $chevron.html('<i class="fa fa-chevron-up" aria-hidden="true"></i>');
       }
-      
+
       dropdown = !dropdown;
     }, 500);
   });

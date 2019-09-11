@@ -1,4 +1,4 @@
-$gallery-height: 330px;
+$slider-height: 330px;
 
 $nav-size: 50px;
 $nav-background-color: #6666667f;
@@ -7,19 +7,20 @@ $dropdown-height: 2 * 16px;
 $dropdown-width: 54px + $dropdown-height;
 $dropdown-background-color: $nav-background-color;
 
-$images-max-height: $gallery-height - (2 * $dropdown-height) - 16px;
+$images-max-width: 300px;
+$images-max-height: $slider-height - (2 * $dropdown-height) - 16px;
 
-#gallery {
+#imageSlider {
   display: block;
   position: relative;
   width: 100%;
-  height: $gallery-height;
+  height: $slider-height;
   margin-top: 1rem;
 
   .nav {
     display: flex;
     position: absolute;
-    top: ($gallery-height - $nav-size) / 2;
+    top: ($slider-height - $nav-size) / 2;
     justify-content: center;
     align-items: center;
     background-color: $nav-background-color;
@@ -69,7 +70,7 @@ $images-max-height: $gallery-height - (2 * $dropdown-height) - 16px;
 
     .scroll {
       width: 100%;
-      height: $gallery-height - (16px * 2);
+      height: $slider-height - (16px * 2);
       overflow-y: auto;
       display: none;
 
@@ -92,23 +93,23 @@ $images-max-height: $gallery-height - (2 * $dropdown-height) - 16px;
     }
   }
 
-  .images {
+  .images .is-row {
     display: flex;
     justify-content: space-around;
     align-items: center;
     align-content: center;
-    height: $gallery-height;
-
+    height: $slider-height;
+    
     img {
+      max-width: $images-max-width;
       max-height: $images-max-height;
-      max-width: 300px;
     }
   }
 }
 
 @media (min-width: $breakpoint-lg) {
-  #gallery .images img {
+  #imageSlider .images .is-row img {
+    max-width: $images-max-width;
     max-height: $images-max-height;
-    max-width: 300px;
   }
 }

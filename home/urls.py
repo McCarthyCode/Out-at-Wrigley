@@ -8,5 +8,5 @@ urlpatterns = [
     path('contests/', views.contests, name='contests'),
     path('sponsors/', views.sponsors, name='sponsors'),
     path('tickets/', views.tickets, name='tickets'),
-    path('gallery/', views.gallery, name='gallery'),
+    path('image_slider/', views.image_slider, name='image_slider'),
 ]
