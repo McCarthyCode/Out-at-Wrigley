@@ -5,7 +5,7 @@ $nav-background-color: #6666667f;
 
 $dropdown-height: 2 * 16px;
 $dropdown-width: 54px + $dropdown-height;
-$dropdown-background-color: $nav-background-color;
+$dropdown-background-color: #333333;
 
 $images-max-width: 300px;
 $images-max-height: $slider-height - (2 * $dropdown-height) - 16px;
@@ -16,6 +16,7 @@ $images-max-height: $slider-height - (2 * $dropdown-height) - 16px;
   width: 100%;
   height: $slider-height;
   margin-top: 1rem;
+  @include user-select-none;
 
   .nav {
     display: flex;
@@ -50,6 +51,12 @@ $images-max-height: $slider-height - (2 * $dropdown-height) - 16px;
     right: 0;
   }
 
+  .nav,
+  .dropdown,
+  .gallery-icon {
+    z-index: 2;
+  }
+
   .dropdown,
   .gallery-icon {
     border-radius: $dropdown-height / 2;
@@ -67,6 +74,7 @@ $images-max-height: $slider-height - (2 * $dropdown-height) - 16px;
     width: $dropdown-width;
     height: $dropdown-height;
     overflow: hidden;
+    @include user-select-none;
 
     .scroll {
       width: 100%;
@@ -93,17 +101,53 @@ $images-max-height: $slider-height - (2 * $dropdown-height) - 16px;
     }
   }
 
-  .images .is-row {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    align-content: center;
+  .images {
+    position: relative;
     height: $slider-height;
-    
-    img {
-      max-width: $images-max-width;
-      max-height: $images-max-height;
+    overflow: hidden;
+    z-index: 0;
+
+    .is-row {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      align-content: center;
+      width: 100%;
+      height: $slider-height;
+
+      a {
+        z-index: 0;
+
+        img {
+          max-width: $images-max-width;
+          max-height: $images-max-height;
+        }
+      }
     }
+  }
+
+  .images::before, .images::after {
+    content: " ";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: $nav-size;
+    height: $slider-height;
+    z-index: 1;
+  }
+
+  .images::before {
+    left: 0;
+    background: linear-gradient(to right, black, rgba(0, 0, 0, 0));
+  }
+
+  .images::after {
+    right: 0;
+    background: linear-gradient(to left, black, rgba(0, 0, 0, 0));
   }
 }
 

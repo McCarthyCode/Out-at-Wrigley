@@ -106,6 +106,11 @@ nav .nav-item a.nav-link:hover {
   width: 100%;
   height: 330px;
   margin-top: 1rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 }
 #imageSlider .nav {
   display: flex;
@@ -134,10 +139,15 @@ nav .nav-item a.nav-link:hover {
 #imageSlider .nav-right {
   right: 0;
 }
+#imageSlider .nav,
+#imageSlider .dropdown,
+#imageSlider .gallery-icon {
+  z-index: 2;
+}
 #imageSlider .dropdown,
 #imageSlider .gallery-icon {
   border-radius: 16px;
-  background-color: #6666667f;
+  background-color: #333333;
   line-height: 32px;
   text-align: center;
   cursor: pointer;
@@ -150,6 +160,11 @@ nav .nav-item a.nav-link:hover {
   width: 86px;
   height: 32px;
   overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 }
 #imageSlider .dropdown .scroll {
   width: 100%;
@@ -171,16 +186,47 @@ nav .nav-item a.nav-link:hover {
 #imageSlider .gallery-icon i {
   vertical-align: -1px;
 }
+#imageSlider .images {
+  position: relative;
+  height: 330px;
+  overflow: hidden;
+  z-index: 0;
+}
 #imageSlider .images .is-row {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
   display: flex;
   justify-content: space-around;
   align-items: center;
   align-content: center;
+  width: 100%;
   height: 330px;
 }
-#imageSlider .images .is-row img {
+#imageSlider .images .is-row a {
+  z-index: 0;
+}
+#imageSlider .images .is-row a img {
   max-width: 300px;
   max-height: 250px;
+}
+#imageSlider .images::before, #imageSlider .images::after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50px;
+  height: 330px;
+  z-index: 1;
+}
+#imageSlider .images::before {
+  left: 0;
+  background: linear-gradient(to right, black, rgba(0, 0, 0, 0));
+}
+#imageSlider .images::after {
+  right: 0;
+  background: linear-gradient(to left, black, rgba(0, 0, 0, 0));
 }
 
 @media (min-width: 992px) {
@@ -263,8 +309,9 @@ a:hover,
 }
 
 .fa-external-link-alt {
+  display: inline;
   vertical-align: 1px;
-  font-size: 9px;
+  font-size: 8px;
   cursor: pointer;
 }
 
