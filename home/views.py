@@ -4,7 +4,7 @@ import pytz
 from datetime import datetime
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseBadRequest
-from django.core.paginator import Paginator
+from django.core.paginator import Paginator, EmptyPage
 from oaw.settings import TIME_ZONE, BASE_DIR
 
 YEAR = datetime.now(pytz.timezone(TIME_ZONE)).year
@@ -90,6 +90,11 @@ def image_slider(request):
 
     paginator = Paginator(pairs, per_page)
 
+    try:
+        page = paginator.page(page_number)
+    except EmptyPage:
+        return HttpResponse(status=204)
+
     return render(request, 'home/image_slider_images.html', {
-        'page': paginator.page(page_number),
+        'page': page,
     })

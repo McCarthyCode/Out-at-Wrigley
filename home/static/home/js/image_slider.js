@@ -19,7 +19,7 @@ $(document).ready(() => {
         'per_page': width < 768 ? 1 : width >= 768 && width < 992 ? 2 : 3,
       },
       statusCode: {
-        500: () => {
+        204: () => {
           $('#imageSlider .images').effect('shake');
           var page = $page.val();
           $page.val(page - 1 > 0 ? --page : 1);
