@@ -31,8 +31,8 @@ $(document).ready(() => {
         if (slideLeft) {
           $images.append(data);
 
-          let $first = $images.children('.is-row:first-child');
-          let $last = $images.children('.is-row:last-child');
+          let $first = $images.children('.is-row:not(:last-child)');
+          let $last = $images.children('.is-row:not(:first-child)');
 
           $first.animate({
             'left': `-${isWidth}px`,
@@ -47,8 +47,8 @@ $(document).ready(() => {
         } else {
           $images.prepend(data);
 
-          let $first = $images.children('.is-row:first-child');
-          let $last = $images.children('.is-row:last-child');
+          let $first = $images.children('.is-row:not(:last-child)');
+          let $last = $images.children('.is-row:not(:first-child)');
 
           $first.css('left', `-${isWidth}px`).animate({
             'left': `0px`,
@@ -68,6 +68,8 @@ $(document).ready(() => {
   getImages();
 
   function getViewportSize() {
+    width = $(window).width();
+
     if (width >= 992) {
       return 'lg-xl';
     } else if (width >= 768) {
@@ -78,14 +80,23 @@ $(document).ready(() => {
   }
 
   var oldViewportSize = getViewportSize();
+  var animationComplete = true;
 
   function refreshSlider() {
-    width = $(window).width();
     var viewportSize = getViewportSize();
 
-    if (oldViewportSize !== viewportSize) {
+    if (oldViewportSize !== viewportSize && animationComplete) {
+      animationComplete = false;
+      slideLeft = true;
+
       $page.val(1);
       getImages();
+
+      setTimeout(() => {
+        animationComplete = true;
+        oldViewportSize = viewportSize;
+        viewportSize = getViewportSize();
+      }, 1000);
     }
 
     oldViewportSize = viewportSize;
@@ -95,11 +106,11 @@ $(document).ready(() => {
 
   var page = 1;
   $('#imageSlider .nav-left').click(() => {
-    if (debounce) {
-      debounce = false;
+    if (animationComplete) {
+      animationComplete = false;
 
       setTimeout(() => {
-        debounce = true;
+        animationComplete = true;
       }, 1000);
 
       slideLeft = false;
@@ -120,13 +131,12 @@ $(document).ready(() => {
     }
   });
 
-  var debounce = true;
   $('#imageSlider .nav-right').click(() => {
-    if (debounce) {
-      debounce = false;
+    if (animationComplete) {
+      animationComplete = false;
 
       setTimeout(() => {
-        debounce = true;
+        animationComplete = true;
       }, 1000);
 
       slideLeft = true;
@@ -153,7 +163,7 @@ $(document).ready(() => {
     } else {
       $scroll.show();
       $dropdown.animate({
-        'height': '330px',
+        'height': '16rem',
       }, 500);
     }
 

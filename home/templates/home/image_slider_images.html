@@ -1,7 +1,7 @@
 <div class="is-row">
-  {% for image in page %}
+  {% for image, thumbnail in page %}
   <a data-fancybox="gallery" href="{{ image }}">
-    <img src="{{ image }}">
+    <img src="{{ thumbnail }}">
   </a>
   {% endfor %}
 </div>

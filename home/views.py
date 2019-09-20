@@ -3,7 +3,7 @@ import pytz
 
 from datetime import datetime
 from django.shortcuts import render
-from django.http import HttpResponseBadRequest
+from django.http import HttpResponse, HttpResponseBadRequest
 from django.core.paginator import Paginator
 from oaw.settings import TIME_ZONE, BASE_DIR
 
@@ -14,9 +14,17 @@ def index(request):
     if request.method != 'GET':
         return HttpResponseBadRequest()
 
-    dropdown = []
-    for i in range(0, 19):
-        dropdown.append(2019 - i)
+    dropdown = [
+        2019,
+        2018,
+        2017,
+        2016,
+        2015,
+        2013,
+        2012,
+        2011,
+        2010,
+    ]
 
     return render(request, 'home/index.html', {
         'name': NAME,
@@ -73,10 +81,14 @@ def image_slider(request):
         stdout=subprocess.PIPE).stdout.decode('utf-8')
     images = images[:-1].split('\n')
 
-    for i in range(0, len(images)):
-        images[i] = '/static/home/img/%s/%s' % (year, images[i])
+    pairs = []
+    for i in range(len(images)):
+        pairs.append((
+            '/static/home/img/%s/%s' % (year, images[i]),
+            '/static/home/img/thumbnails_%s/%s' % (year, images[i]),
+        ))
 
-    paginator = Paginator(images, per_page)
+    paginator = Paginator(pairs, per_page)
 
     return render(request, 'home/image_slider_images.html', {
         'page': paginator.page(page_number),
