@@ -163,7 +163,7 @@ $(document).ready(() => {
     } else {
       $scroll.show();
       $dropdown.animate({
-        'height': '16rem',
+        'height': '15.75rem',
       }, 500);
     }
 
