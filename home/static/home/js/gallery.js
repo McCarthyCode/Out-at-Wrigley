@@ -46,8 +46,6 @@ $(document).ready(() => {
     width = verticalScrollbar() ? $(window).width() + scrollbarWidth : $(window).width();
     height = $(window).height();
 
-    console.log(width);
-
     if (width < 576) {
       $modalBody.css('height', `${height - 224 + 4 * 16}px`);
 
