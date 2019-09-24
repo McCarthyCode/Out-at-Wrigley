@@ -4,13 +4,14 @@
 @import 'index';
 @import 'ads';
 @import 'navbar';
-@import '_image_slider';
+@import 'image_slider';
+@import 'gallery';
 @import 'footer';
 @import 'about';
 
 body {
   background-color: $background-color;
-  color: $text-color
+  color: $text-color;
 }
 
 .h1, .h3 {
@@ -53,10 +54,6 @@ a:hover,
 }
 
 .content {
-  img {
-    width: 300px;
-  }
-
   img.float-left-sm, img.float-right-sm {
     display: block;
     margin: 0 auto 1rem auto;

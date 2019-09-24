@@ -9,5 +9,5 @@ urlpatterns = [
     path('sponsors/', views.sponsors, name='sponsors'),
     path('tickets/', views.tickets, name='tickets'),
     path('image_slider/', views.image_slider, name='image_slider'),
-    # path('gallery/', views.gallery, name='gallery'),
+    path('gallery/', views.gallery, name='gallery'),
 ]

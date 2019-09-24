@@ -5,7 +5,7 @@ $nav-background-color: #6666667f;
 
 $dropdown-height: 2 * 16px;
 $dropdown-width: 54px + $dropdown-height;
-$dropdown-background-color: #333333;
+$dropdown-background-color: $document-background-color;
 
 $images-max-width: 300px;
 $images-max-height: $slider-height - (2 * $dropdown-height) - 16px;
@@ -53,12 +53,12 @@ $images-max-height: $slider-height - (2 * $dropdown-height) - 16px;
 
   .nav,
   .dropdown,
-  .gallery-icon {
+  #galleryIcon {
     z-index: 2;
   }
 
   .dropdown,
-  .gallery-icon {
+  #galleryIcon {
     border-radius: $dropdown-height / 2;
     background-color: $dropdown-background-color;
     line-height: $dropdown-height;
@@ -88,7 +88,7 @@ $images-max-height: $slider-height - (2 * $dropdown-height) - 16px;
     }
   }
 
-  .gallery-icon {
+  #galleryIcon {
     position: absolute;
     top: 0;
     right: $nav-size + 16px;
