@@ -8,6 +8,7 @@
 @import 'gallery';
 @import 'footer';
 @import 'about';
+@import 'tickets';
 
 body {
   background-color: $background-color;
@@ -58,6 +59,7 @@ a:hover,
     display: block;
     margin: 0 auto 1rem auto;
     float: none;
+    width: 300px;
   }
 }
 

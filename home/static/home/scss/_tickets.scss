@@ -1,0 +1,74 @@
+.tickets {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 0.25rem;
+  margin-bottom: 2rem;
+  font-family: $font-body;
+
+  .vip, .bleacher {
+    width: 100%;
+    margin-top: 1rem;
+
+    header {
+      padding: 1rem;
+      text-transform: uppercase;
+
+      .h5 {
+        font-weight: bold;
+      }
+
+      .h5:first-child {
+        margin-bottom: 1rem;
+      }
+
+      .h5:last-child {
+        margin: 0;
+      }
+    }
+
+    ul.body {
+      height: 120px;
+
+      li {
+        padding: 0.5rem 0;
+      }
+
+      li:nth-child(2n + 1) {
+        background-color: $alternate-background-color;
+      }
+    }
+
+    footer {
+      padding: 1rem 0;
+    }
+
+    ul.body, footer {
+      margin: 0 0.5rem;
+      background-color: $document-background-color;
+      text-align: center;
+    }
+  }
+
+  .vip header {
+    background-color: #ED1C1D;
+  }
+
+  .bleacher header {
+    background-color: #036FB9;
+  }
+}
+
+@media (min-width: $breakpoint-md) {
+  .tickets {
+    flex-wrap: nowrap;
+
+    .vip {
+      padding-right: 0.5rem;
+    }
+
+    .bleacher {
+      padding-left: 0.5rem;
+    }
+  }
+}

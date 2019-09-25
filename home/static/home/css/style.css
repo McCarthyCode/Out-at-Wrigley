@@ -344,24 +344,24 @@ nav .nav-item a.nav-link:hover {
     grid-template-columns: 300px 300px 300px;
   }
 }
-footer {
+footer.footer {
   padding: 1rem 0;
 }
-footer p {
+footer.footer p {
   margin: 0;
   text-align: center;
 }
-footer p, footer a {
+footer.footer p, footer.footer a {
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 0.75rem;
 }
-footer .footer-list {
+footer.footer .footer-list {
   max-width: 16rem;
   position: relative;
   margin: auto;
   overflow: hidden;
 }
-footer .footer-list ul {
+footer.footer .footer-list ul {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -370,7 +370,7 @@ footer .footer-list ul {
   list-style: none;
   padding-left: 0;
 }
-footer .footer-list li {
+footer.footer .footer-list li {
   line-height: 0.75em;
   flex: 1 0 auto;
   margin: 0.25em 0;
@@ -384,6 +384,66 @@ footer .footer-list li {
   width: 100%;
 }
 
+.tickets {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 0.25rem;
+  margin-bottom: 2rem;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+.tickets .vip, .tickets .bleacher {
+  width: 100%;
+  margin-top: 1rem;
+}
+.tickets .vip header, .tickets .bleacher header {
+  padding: 1rem;
+  text-transform: uppercase;
+}
+.tickets .vip header .h5, .tickets .bleacher header .h5 {
+  font-weight: bold;
+}
+.tickets .vip header .h5:first-child, .tickets .bleacher header .h5:first-child {
+  margin-bottom: 1rem;
+}
+.tickets .vip header .h5:last-child, .tickets .bleacher header .h5:last-child {
+  margin: 0;
+}
+.tickets .vip ul.body, .tickets .bleacher ul.body {
+  height: 120px;
+}
+.tickets .vip ul.body li, .tickets .bleacher ul.body li {
+  padding: 0.5rem 0;
+}
+.tickets .vip ul.body li:nth-child(2n+1), .tickets .bleacher ul.body li:nth-child(2n+1) {
+  background-color: #444444;
+}
+.tickets .vip footer, .tickets .bleacher footer {
+  padding: 1rem 0;
+}
+.tickets .vip ul.body, .tickets .vip footer, .tickets .bleacher ul.body, .tickets .bleacher footer {
+  margin: 0 0.5rem;
+  background-color: #333333;
+  text-align: center;
+}
+.tickets .vip header {
+  background-color: #ED1C1D;
+}
+.tickets .bleacher header {
+  background-color: #036FB9;
+}
+
+@media (min-width: 768px) {
+  .tickets {
+    flex-wrap: nowrap;
+  }
+  .tickets .vip {
+    padding-right: 0.5rem;
+  }
+  .tickets .bleacher {
+    padding-left: 0.5rem;
+  }
+}
 body {
   background-color: black;
   color: white;
@@ -432,6 +492,7 @@ a:hover,
   display: block;
   margin: 0 auto 1rem auto;
   float: none;
+  width: 300px;
 }
 
 ul.ul {
