@@ -1,5 +1,4 @@
 nav {
-  font-family: $font-title;
   background-color: $background-color;
   position: relative;
 
@@ -12,12 +11,13 @@ nav {
       display: inline;
 
       a {
-        color: $text-color;
         padding: 0 0.25rem;
+        color: $text-color;
+        transition: 0.5s;
       }
 
       a:hover {
-        color: $text-color-hover;
+        color: $blue;
       }
     }
   }
@@ -31,18 +31,22 @@ nav {
     color: $text-color-hover !important;
   }
 
-  .nav-item {
-    text-align: center;
+  ul {
+    font-family: $font-title;
 
-    a.nav-link {
-      background-color: $document-background-color;
-      border-radius: 4px;
-      margin-top: 0.5rem;
-      color: $text-color !important;
-    }
+    .nav-item {
+      text-align: center;
 
-    a.nav-link:hover {
-      color: $text-color-hover !important;
+      a.nav-link {
+        background-color: $document-background-color;
+        border-radius: 0.25rem;
+        margin-top: 0.5rem;
+        color: $text-color !important;
+      }
+
+      a.nav-link:hover {
+        color: $text-color-hover !important;
+      }
     }
   }
 }
@@ -50,17 +54,20 @@ nav {
 @media (min-width: $breakpoint-md) {
   nav {
     .social {
-      right: 28rem;
+      right: 29.5rem;
     }
 
-    .nav-item {
-      a.nav-link {
-        background-color: $background-color;
-        margin-top: 0;
-        padding: 0 0.5rem;
-        line-height: 70px;
-        vertical-align: middle;
-      }
+    ul .nav-item  a.nav-link {
+      background-color: unset;
+      margin-top: 0;
+      padding: 0 0.5rem;
+      line-height: 70px;
+      vertical-align: middle;
+      transition: 0.5s;
+    }
+
+    ul .nav-item  a.nav-link:hover {
+      color: $red !important;
     }
   }
 }

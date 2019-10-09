@@ -68,6 +68,17 @@ def tickets(request):
         'year': datetime.now(pytz.timezone(TIME_ZONE)).year,
     })
 
+def contact(request):
+    if request.method != 'GET':
+        return HttpResponseBadRequest()
+
+    return render(request, 'home/contact.html', {
+        'name': NAME,
+        'phone': '(224) 404-0873',
+        'email': 'bill@mtmchicago.com',
+        'year': datetime.now(pytz.timezone(TIME_ZONE)).year,
+    })
+
 def image_slider(request):
     if request.method != 'GET':
         return HttpResponseBadRequest()
