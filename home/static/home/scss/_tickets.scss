@@ -12,13 +12,13 @@
 
     header {
       padding: 1rem;
-      text-transform: uppercase;
 
       .h5 {
         font-weight: bold;
       }
 
       .h5:first-child {
+        text-transform: uppercase;
         margin-bottom: 1rem;
       }
 

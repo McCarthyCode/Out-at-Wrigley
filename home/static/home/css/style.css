@@ -398,12 +398,12 @@ footer.footer .footer-list li {
 }
 .tickets .vip header, .tickets .bleacher header {
   padding: 1rem;
-  text-transform: uppercase;
 }
 .tickets .vip header .h5, .tickets .bleacher header .h5 {
   font-weight: bold;
 }
 .tickets .vip header .h5:first-child, .tickets .bleacher header .h5:first-child {
+  text-transform: uppercase;
   margin-bottom: 1rem;
 }
 .tickets .vip header .h5:last-child, .tickets .bleacher header .h5:last-child {
