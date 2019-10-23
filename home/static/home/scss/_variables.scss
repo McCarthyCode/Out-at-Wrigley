@@ -7,7 +7,6 @@ $red: #ed1c1d;
 $blue: #649fd1;
 
 $text-color: white;
-$text-color-hover: rgba(255, 255, 255, 0.75);
 $link-color: #00ffff;
 
 $font-title: 'Amaranth', Helvetica, Arial, sans-serif;
@@ -25,4 +24,9 @@ $breakpoint-xl: 1200px;
   -ms-user-select: none;
   -o-user-select: none;
   user-select: none;
+}
+
+@mixin transition-color($time) {
+  -webkit-transition: color $time;
+  transition: color $time;
 }

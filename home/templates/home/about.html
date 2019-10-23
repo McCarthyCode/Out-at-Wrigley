@@ -8,6 +8,11 @@
     {% include 'home/large_mobile_banner1.html' %}
     <div class="about-header">
         <h1 class="h1 text-center">About Out at Wrigley</h1>
+        <h3 class="h3 text-center">Contact</h3>
+        <ul>
+          <li class="text-center">Phone: <a href="tel:{{ phone }}">{{ phone }}</a></li>
+          <li class="text-center">Email: <a href="mailto:{{ email }}">{{ email }}</a></li>
+        </ul>
         <a data-fancybox="gallery" href="{% static 'home/img/about_1169x487.jpg' %}">
           <img src="{% static 'home/img/about_934x389.jpg' %}" alt="Jaimee Rosko Photography">
         </a>
@@ -34,10 +39,6 @@
       and Supergurl Images, which organizes Out at Wrigley, will be holding contests
       to choose an individual to sing the National Anthem and throw out the
       Ceremonial First Pitch that day.
-    </p>
-    <p>
-      For more information on Out at Wrigley, please contact Bill Gubrud at
-      <a href="mailto:bill@mtmchicago.com">bill@mtmchicago.com</a>.
     </p>
   </div>
   <div>

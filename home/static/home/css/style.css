@@ -63,7 +63,8 @@ nav .social li {
 nav .social li a {
   padding: 0 0.25rem;
   color: white;
-  transition: 0.5s;
+  -webkit-transition: color 0.5s;
+  transition: color 0.5s;
 }
 nav .social li a:hover {
   color: #649fd1;
@@ -71,9 +72,11 @@ nav .social li a:hover {
 nav button {
   border: none !important;
   color: white !important;
+  -webkit-transition: color 0.5s;
+  transition: color 0.5s;
 }
 nav button:hover {
-  color: rgba(255, 255, 255, 0.75) !important;
+  color: #ed1c1d !important;
 }
 nav ul {
   font-family: "Amaranth", Helvetica, Arial, sans-serif;
@@ -86,14 +89,16 @@ nav ul .nav-item a.nav-link {
   border-radius: 0.25rem;
   margin-top: 0.5rem;
   color: white !important;
+  -webkit-transition: color 0.5s;
+  transition: color 0.5s;
 }
 nav ul .nav-item a.nav-link:hover {
-  color: rgba(255, 255, 255, 0.75) !important;
+  color: #ed1c1d !important;
 }
 
 @media (min-width: 768px) {
   nav .social {
-    right: 29.5rem;
+    right: 29rem;
   }
   nav ul .nav-item a.nav-link {
     background-color: unset;
@@ -101,7 +106,8 @@ nav ul .nav-item a.nav-link:hover {
     padding: 0 0.5rem;
     line-height: 70px;
     vertical-align: middle;
-    transition: 0.5s;
+    -webkit-transition: color 0.5s;
+    transition: color 0.5s;
   }
   nav ul .nav-item a.nav-link:hover {
     color: #ed1c1d !important;

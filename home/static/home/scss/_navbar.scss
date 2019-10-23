@@ -13,7 +13,7 @@ nav {
       a {
         padding: 0 0.25rem;
         color: $text-color;
-        transition: 0.5s;
+        @include transition-color(0.5s);
       }
 
       a:hover {
@@ -25,10 +25,11 @@ nav {
   button {
     border: none !important;
     color: $text-color !important;
+    @include transition-color(0.5s);
   }
 
   button:hover {
-    color: $text-color-hover !important;
+    color: $red !important;
   }
 
   ul {
@@ -42,10 +43,11 @@ nav {
         border-radius: 0.25rem;
         margin-top: 0.5rem;
         color: $text-color !important;
+        @include transition-color(0.5s);
       }
 
       a.nav-link:hover {
-        color: $text-color-hover !important;
+        color: $red !important;
       }
     }
   }
@@ -54,7 +56,7 @@ nav {
 @media (min-width: $breakpoint-md) {
   nav {
     .social {
-      right: 29.5rem;
+      right: 29rem;
     }
 
     ul .nav-item  a.nav-link {
@@ -63,7 +65,7 @@ nav {
       padding: 0 0.5rem;
       line-height: 70px;
       vertical-align: middle;
-      transition: 0.5s;
+      @include transition-color(0.5s);
     }
 
     ul .nav-item  a.nav-link:hover {
