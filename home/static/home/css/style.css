@@ -405,6 +405,9 @@ footer.footer .footer-list li {
   margin-bottom: 2rem;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
 }
+.tickets .bleacher ul.body {
+  height: 120px;
+}
 .tickets .vip, .tickets .bleacher {
   width: 100%;
   margin-top: 1rem;
@@ -421,9 +424,6 @@ footer.footer .footer-list li {
 }
 .tickets .vip header .h5:last-child, .tickets .bleacher header .h5:last-child {
   margin: 1rem 0 0 0;
-}
-.tickets .vip ul.body, .tickets .bleacher ul.body {
-  height: 120px;
 }
 .tickets .vip ul.body li, .tickets .bleacher ul.body li {
   padding: 0.5rem 0;

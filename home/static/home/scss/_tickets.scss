@@ -6,6 +6,10 @@
   margin-bottom: 2rem;
   font-family: $font-body;
 
+  .bleacher ul.body {
+    height: 120px;
+  }
+
   .vip, .bleacher {
     width: 100%;
     margin-top: 1rem;
@@ -28,8 +32,6 @@
     }
 
     ul.body {
-      height: 120px;
-
       li {
         padding: 0.5rem 0;
       }
