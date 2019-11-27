@@ -29,6 +29,7 @@ SECRET_KEY = content[:-1]
 DEBUG = False
 
 ALLOWED_HOSTS = [
+    'localhost',
     '167.71.116.145',
     'outatwrigley.com',
 ]
@@ -38,7 +39,7 @@ ALLOWED_HOSTS = [
 
 INSTALLED_APPS = [
     'home',
-    'django.contrib.admin',
+    # 'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -142,3 +143,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+
