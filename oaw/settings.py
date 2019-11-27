@@ -88,7 +88,7 @@ if DEBUG:
         }
     }
 else:
-    PGPASSWORD_FILE = '%s/Out-at-Wrigley/auth/pgpass.txt' % HOME
+    PGPASSWORD_FILE = '%s/auth/pgpass.txt' % BASE_DIR
     with open(PGPASSWORD_FILE, 'r', encoding='utf8') as f:
         content = f.readline()
     PGPASSWORD = content[:-1]
