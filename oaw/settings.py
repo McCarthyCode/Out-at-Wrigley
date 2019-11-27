@@ -26,11 +26,11 @@ with open(SECRET_KEY_FILE, 'r', encoding='utf8') as f:
 SECRET_KEY = content[:-1]
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
-    '10.0.0.100',
-    'localhost',
+    '167.71.116.145',
+    'outatwrigley.com',
 ]
 
 
@@ -80,12 +80,29 @@ WSGI_APPLICATION = 'oaw.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+if DEBUG:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
     }
-}
+else:
+    PGPASSWORD_FILE = '%s/Out-at-Wrigley/auth/pgpass.txt' % HOME
+    with open(PGPASSWORD_FILE, 'r', encoding='utf8') as f:
+        content = f.readline()
+    PGPASSWORD = content[:-1]
+
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'oaw',
+            'USER': 'oaw',
+            'PASSWORD': PGPASSWORD,
+            'HOST': 'localhost',
+            'PORT': '',
+        }
+    }
 
 
 # Password validation

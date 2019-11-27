@@ -1,5 +1,5 @@
 .vscode
 *.pyc
+auth
 db.sqlite3
 env
-auth
