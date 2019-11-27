@@ -524,6 +524,12 @@ ul.ul li {
   margin-left: 20px;
 }
 
+sup {
+  font-size: 0.75em;
+  vertical-align: 0.25em;
+  top: 0;
+}
+
 @media (min-width: 576px) {
   .content img.float-left-sm {
     float: left;
