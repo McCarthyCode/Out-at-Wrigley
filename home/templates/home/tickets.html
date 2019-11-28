@@ -2,65 +2,57 @@
 {% load static %}
 
 {% block content %}
-<div id="grid">
-  <div>
-    {% include 'home/ads/leaderboard_top.html' %}
-    <h1 class="h1 text-center">Buy Tickets</h1>
-    <p class="text-center">
-      All ticket purchases are done through PayPal and are secure.
-    </p>
-    <div class="tickets">
-      <div class="vip">
-          <header>
-            <h5 class="h5 text-center">VIP Tickets</h5>
-            <h5 class="h5 text-center">Price TBD</h5>
-          </header>
-          <ul class="body">
-            <li>One VIP ticket</li>
-            <li>All you can drink (beer, wine, soda, water)</li>
-            <li>All you can eat (snacks)</li>
-          </ul>
-          <!-- <footer>
-            <a href="#">
-              <img
-                src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif"
-                alt="PayPal">
-            </a>
-          </footer> -->
-      </div>
-      <div class="bleacher">
-        <header>
-          <h5 class="h5 text-center">Bleacher Reserved Tickets</h5>
-          <h5 class="h5 text-center">Price TBD</h5>
-        </header>
-        <ul class="body">
-          <li>One bleacher ticket</li>
-        </ul>
-        <!-- <footer>
-          <a href="#">
-            <img
-              src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif"
-              alt="PayPal">
-          </a>
-        </footer> -->
-      </div>
-    </div>
-    <h5 class="h5 text-center">
-      All ticket sales are final.
-    </h5>
-    <p class="text-center">
-      Tentative dates are August 22<sup>nd</sup> and 23<sup>rd</sup> vs. the Cardinals. We will update the site with ticket prices when the Cubs inform us. There will be various ticket pick-up locations throughout the year. Thank you for supporting OAW again this year!
-    </p>
+{% include 'home/ads/leaderboard_top.html' %}
+<h1 class="h1 text-center">Buy Tickets</h1>
+<p class="text-center">
+  All ticket purchases are done through PayPal and are secure.
+</p>
+<div class="tickets">
+  <div class="vip">
+      <header>
+        <h5 class="h5 text-center">VIP Tickets</h5>
+        <h5 class="h5 text-center">Price TBD</h5>
+      </header>
+      <ul class="body">
+        <li>One VIP ticket</li>
+        <li>All you can drink (beer, wine, soda, water)</li>
+        <li>All you can eat (snacks)</li>
+      </ul>
+      <!-- <footer>
+        <a href="#">
+          <img
+            src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif"
+            alt="PayPal">
+        </a>
+      </footer> -->
   </div>
-  <div>
-    {% include 'home/ads/skyscraper.html' %}
+  <div class="bleacher">
+    <header>
+      <h5 class="h5 text-center">Bleacher Reserved Tickets</h5>
+      <h5 class="h5 text-center">Price TBD</h5>
+    </header>
+    <ul class="body">
+      <li>One bleacher ticket</li>
+    </ul>
+    <!-- <footer>
+      <a href="#">
+        <img
+          src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif"
+          alt="PayPal">
+      </a>
+    </footer> -->
   </div>
 </div>
+<h5 class="h5 text-center">
+  All ticket sales are final.
+</h5>
+<p class="text-center">
+  Tentative dates are August 22<sup>nd</sup> and 23<sup>rd</sup> vs. the Cardinals. We will update the site with ticket prices when the Cubs inform us. There will be various ticket pick-up locations throughout the year. Thank you for supporting OAW again this year!
+</p>
 {% include 'home/ads/large_mobile_banner1.html' %}
 <div id="rectangles">
   {% include 'home/ads/medium_rectangle1.html' %}
   {% include 'home/ads/medium_rectangle2.html' %}
-  {% include 'home/ads/medium_rectangle3.html' %}
 </div>
 {% include 'home/ads/leaderboard_bottom.html' %}
 {% include 'home/ads/large_mobile_banner2.html' %}

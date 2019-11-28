@@ -2,85 +2,76 @@
 {% load static %}
 
 {% block content %}
-<div id="grid">
-  <div>
-    {% include 'home/ads/leaderboard_top.html' %}
-    <h1 class="h1 text-center">Contests</h1>
-    <h3 class="h3">National Anthem</h3>
-    <div class="content">
-      <a data-fancybox="gallery" href="{% static '/home/img/national_anthem.jpg' %}">
-        <img class="float-left-sm" src="{% static '/home/img/national_anthem.jpg' %}" alt="National Anthem">
-      </a>
-      <p>
-        Have you ever thought what it would be like to sing the national Anthem in
-        front of 40,000 people and in front of millions on tv?
-      </p>
-      <p>
-        Well, here is your chance! Out at Wrigley will be holding a competition for
-        one lucky and talented person to sing the national Anthem at Wrigley Field.
-      </p>
-      <p>
-        There will be two rounds. The first round is your song of choice and the
-        second round will be the National Anthem.
-      </p>
-      <p>
-        There can be multiple winners at each prelim event that will advance to the
-        semi-finals.
-        <!-- Below is a list of competition dates for you to choose from: -->
-      </p>
-      <p>
-        Semi Finals will be during Pridefest and Finals will be during Market Days.
-        There will be a cash prize for 1st, 2nd and 3rd place. Visit Out at Wrigley
-        <a class="external-link" href="https://facebook.com/OutAtWrigley">Facebook</a>,
-        <a class="external-link" href="https://twitter.com/OutAtWrigley">Twitter</a>, or
-        <a class="external-link" href="https://instagram.com/OutAtWrigley/">Instagram</a>
-        pages for more info on how to compete and the locations.
-      </p>
-    </div>
-    {% include 'home/ads/large_mobile_banner1.html' %}
-    <h3 class="h3">First Pitch</h3>
-    <div class="content">
-      <a data-fancybox="gallery" href="{% static '/home/img/first_pitch.jpg' %}">
-        <img class="float-right-sm" src="{% static '/home/img/first_pitch.jpg' %}" alt="First Pitch">
-      </a>
-      <p>
-        Win a chance to throw out the first pitch at Wrigley Field.
-      </p>
-      <h5 class="h5">Contest Rules</h5>
-      <ul class="ul">
-        <li>
-          There will be a round target with points.
-        </li>
-        <li>
-          Each contestant will be about 10 feet from the target.
-        </li>
-        <li>
-          Each contestant will have three throws per round.
-        </li>
-        <li>
-          There will be three rounds to throw at the target.
-        </li>
-        <li>
-          The highest scores each round will advance until there is a winner.
-        </li>
-      </ul>
-      <p>
-        Semi Finals will be during Pridefest and Finals will be during Market Days.
-        There will be a cash prize for 1st, 2nd and 3rd place. Visit Out at Wrigley
-        Twitter, Instagram or Facebook Out at Wrigley Pages for more info on how to
-        compete and the locations.
-      </p>
-    </div>
-
-  </div>
-  <div>
-    {% include 'home/ads/skyscraper.html' %}
-  </div>
+{% include 'home/ads/leaderboard_top.html' %}
+<h1 class="h1 text-center">Contests</h1>
+<h3 class="h3">National Anthem</h3>
+<div class="content">
+  <a data-fancybox="gallery" href="{% static '/home/img/national_anthem.jpg' %}">
+    <img class="float-left-sm" src="{% static '/home/img/national_anthem.jpg' %}" alt="National Anthem">
+  </a>
+  <p>
+    Have you ever thought what it would be like to sing the national Anthem in
+    front of 40,000 people and in front of millions on tv?
+  </p>
+  <p>
+    Well, here is your chance! Out at Wrigley will be holding a competition for
+    one lucky and talented person to sing the national Anthem at Wrigley Field.
+  </p>
+  <p>
+    There will be two rounds. The first round is your song of choice and the
+    second round will be the National Anthem.
+  </p>
+  <p>
+    There can be multiple winners at each prelim event that will advance to the
+    semi-finals.
+    <!-- Below is a list of competition dates for you to choose from: -->
+  </p>
+  <p>
+    Semi Finals will be during Pridefest and Finals will be during Market Days.
+    There will be a cash prize for 1st, 2nd and 3rd place. Visit Out at Wrigley
+    <a class="external-link" href="https://facebook.com/OutAtWrigley">Facebook</a>,
+    <a class="external-link" href="https://twitter.com/OutAtWrigley">Twitter</a>, or
+    <a class="external-link" href="https://instagram.com/OutAtWrigley/">Instagram</a>
+    pages for more info on how to compete and the locations.
+  </p>
+</div>
+{% include 'home/ads/large_mobile_banner1.html' %}
+<h3 class="h3">First Pitch</h3>
+<div class="content">
+  <a data-fancybox="gallery" href="{% static '/home/img/first_pitch.jpg' %}">
+    <img class="float-right-sm" src="{% static '/home/img/first_pitch.jpg' %}" alt="First Pitch">
+  </a>
+  <p>
+    Win a chance to throw out the first pitch at Wrigley Field.
+  </p>
+  <h5 class="h5">Contest Rules</h5>
+  <ul class="ul">
+    <li>
+      There will be a round target with points.
+    </li>
+    <li>
+      Each contestant will be about 10 feet from the target.
+    </li>
+    <li>
+      Each contestant will have three throws per round.
+    </li>
+    <li>
+      There will be three rounds to throw at the target.
+    </li>
+    <li>
+      The highest scores each round will advance until there is a winner.
+    </li>
+  </ul>
+  <p>
+    Semi Finals will be during Pridefest and Finals will be during Market Days.
+    There will be a cash prize for 1st, 2nd and 3rd place. Visit Out at Wrigley
+    Twitter, Instagram or Facebook Out at Wrigley Pages for more info on how to
+    compete and the locations.
+  </p>
 </div>
 <div id="rectangles">
   {% include 'home/ads/medium_rectangle1.html' %}
   {% include 'home/ads/medium_rectangle2.html' %}
-  {% include 'home/ads/medium_rectangle3.html' %}
 </div>
 {% include 'home/ads/leaderboard_bottom.html' %}
 {% include 'home/ads/large_mobile_banner2.html' %}

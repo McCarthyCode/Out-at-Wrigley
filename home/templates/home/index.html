@@ -2,25 +2,17 @@
 {% load static %}
 
 {% block content %}
-<div id="grid">
-  <div>
-    {% include 'home/ads/leaderboard_top.html' %}
-    <div id="cover">
-      <img id="cover-md" class="d-none d-md-block" src="{% static 'home/img/logo_728x398.png' %}" alt="Out at Wrigley">
-      <img id="cover-sm" class="d-none d-sm-block d-md-none" src="{% static 'home/img/logo_510x279.png' %}" alt="Out at Wrigley">
-      <img id="cover-xs" class="d-block d-sm-none" src="{% static 'home/img/logo_320x175.png' %}" alt="Out at Wrigley">
-    </div>
-  </div>
-  <div>
-    {% include 'home/ads/skyscraper.html' %}
-  </div>
+{% include 'home/ads/leaderboard_top.html' %}
+<div id="cover">
+  <img id="cover-md" class="d-none d-md-block" src="{% static 'home/img/logo_728x398.png' %}" alt="Out at Wrigley">
+  <img id="cover-sm" class="d-none d-sm-block d-md-none" src="{% static 'home/img/logo_510x279.png' %}" alt="Out at Wrigley">
+  <img id="cover-xs" class="d-block d-sm-none" src="{% static 'home/img/logo_320x175.png' %}" alt="Out at Wrigley">
 </div>
 {% include 'home/image_slider.html' %}
 {% include 'home/ads/large_mobile_banner1.html' %}
 <div id="rectangles">
   {% include 'home/ads/medium_rectangle1.html' %}
   {% include 'home/ads/medium_rectangle2.html' %}
-  {% include 'home/ads/medium_rectangle3.html' %}
 </div>
 {% include 'home/ads/leaderboard_bottom.html' %}
 {% include 'home/ads/large_mobile_banner2.html' %}
