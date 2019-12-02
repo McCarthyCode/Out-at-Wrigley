@@ -85,11 +85,4 @@ $(document).ready(() => {
   $(window).on('resize orientationchange', () => {
     adjustGallery();
   });
-
-  // $('#gallery').on('show.bs.modal', () => {
-  //   $(this).find('.modal-body').css({
-  //     'width': '964px',
-  //     'max-height': '100%',
-  //   });
-  // });
 });
