@@ -295,7 +295,8 @@ nav ul .nav-item a.nav-link:hover {
 #gallery .dialog .content .modal-body {
   height: 100%;
   margin: 0 auto;
-  overflow-y: auto;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 #gallery .dialog .content .modal-body .grid {
   display: grid;
