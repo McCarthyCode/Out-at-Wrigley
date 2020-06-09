@@ -1,6 +1,6 @@
 auth
 db.sqlite3
-env
+.env
 *.pyc
 /static
 .vscode
