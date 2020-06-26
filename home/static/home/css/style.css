@@ -507,10 +507,6 @@ a:hover,
   cursor: pointer;
 }
 
-.container {
-  padding: 0;
-}
-
 .content img.float-left-sm, .content img.float-right-sm {
   display: block;
   margin: 0 auto 1rem auto;
