@@ -15,6 +15,26 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+# Retrieve production stage environment variable
+class MissingEnvironmentVariable(Exception):
+    pass
+
+class InvalidEnvironmentVariable(Exception):
+    pass
+
+try:
+    STAGE = os.environ['STAGE']
+except KeyError:
+    raise MissingEnvironmentVariable('Environment variable STAGE is not defined.')
+
+# SECURITY WARNING: don't run with debug turned on in production!
+if STAGE == 'development' or STAGE == 'staging':
+    DEBUG = True
+elif STAGE == 'production':
+    DEBUG = False
+else:
+    raise InvalidEnvironmentVariable('The value of environment variable STAGE is not valid.')
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
@@ -25,14 +45,19 @@ with open(SECRET_KEY_FILE, 'r', encoding='utf8') as f:
     content = f.readline()
 SECRET_KEY = content[:-1]
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-
-ALLOWED_HOSTS = [
-    'localhost',
-    '167.71.116.145',
-    'outatwrigley.com',
-]
+if STAGE == 'development':
+    ALLOWED_HOSTS = [
+        'localhost',
+    ]
+elif STAGE == 'staging':
+    ALLOWED_HOSTS = [
+        'staging.outatwrigley.com',
+    ]
+elif STAGE == 'production':
+    ALLOWED_HOSTS = [
+        'outatwrigley.com',
+        'www.outatwrigley.com',
+    ]
 
 
 # Application definition
@@ -81,18 +106,18 @@ WSGI_APPLICATION = 'oaw.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-if DEBUG:
+if STAGE == 'development':
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
     }
-else:
-    PGPASSWORD_FILE = '%s/auth/pgpass.txt' % BASE_DIR
+elif STAGE == 'staging' or STAGE == 'production':
+    PGPASSWORD_FILE = '%s/auth/.pgpass' % BASE_DIR
     with open(PGPASSWORD_FILE, 'r', encoding='utf8') as f:
         content = f.readline()
-    PGPASSWORD = content[:-1]
+    PGPASSWORD = content[12:-1]
 
     DATABASES = {
         'default': {
