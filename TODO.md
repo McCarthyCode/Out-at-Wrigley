@@ -2,9 +2,7 @@
 
 ## High Priorities
 
-- Update footer
-  - Change color of separator
-  - Adjust width for name change
+- Update Sponsors page
 
 ## Medium Priorities
 
