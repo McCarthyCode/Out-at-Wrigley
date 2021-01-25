@@ -2,7 +2,7 @@
 
 ## High Priorities
 
-- Update Sponsors page
+*None at this time*
 
 ## Medium Priorities
 
