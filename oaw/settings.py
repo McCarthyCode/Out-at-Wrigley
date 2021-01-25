@@ -103,34 +103,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'oaw.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/2.2/ref/settings/#databases
-
-if STAGE == 'development':
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        }
-    }
-elif STAGE == 'staging' or STAGE == 'production':
-    PGPASSWORD_FILE = '%s/auth/.pgpass' % BASE_DIR
-    with open(PGPASSWORD_FILE, 'r', encoding='utf8') as f:
-        content = f.readline()
-    PGPASSWORD = content[12:-1]
-
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'oaw',
-            'USER': 'oaw',
-            'PASSWORD': PGPASSWORD,
-            'HOST': 'localhost',
-            'PORT': '',
-        }
-    }
-
-
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
 
