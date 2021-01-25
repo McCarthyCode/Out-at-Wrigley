@@ -78,6 +78,9 @@ nav button {
 nav button:hover {
   color: #ed1c1d !important;
 }
+nav #navbarCollapse {
+  display: none;
+}
 nav ul {
   font-family: "Amaranth", Helvetica, Arial, sans-serif;
 }
@@ -111,6 +114,9 @@ nav ul .nav-item a.nav-link:hover {
   }
   nav ul .nav-item a.nav-link:hover {
     color: #ed1c1d !important;
+  }
+  nav #navbarCollapse {
+    display: inline;
   }
 }
 #imageSlider {

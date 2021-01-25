@@ -32,6 +32,10 @@ nav {
     color: $red !important;
   }
 
+  #navbarCollapse {
+    display: none;
+  }
+
   ul {
     font-family: $font-title;
 
@@ -59,7 +63,7 @@ nav {
       right: 29rem;
     }
 
-    ul .nav-item  a.nav-link {
+    ul .nav-item a.nav-link {
       background-color: unset;
       margin-top: 0;
       padding: 0 0.5rem;
@@ -68,8 +72,12 @@ nav {
       @include transition-color(0.5s);
     }
 
-    ul .nav-item  a.nav-link:hover {
+    ul .nav-item a.nav-link:hover {
       color: $red !important;
+    }
+
+    #navbarCollapse {
+      display: inline;
     }
   }
 }
