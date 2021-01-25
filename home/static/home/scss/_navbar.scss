@@ -1,19 +1,62 @@
 nav {
-  background-color: $background-color;
   position: relative;
+  background-image: linear-gradient(
+      30deg,
+      red,
+      orange,
+      yellow,
+      green,
+      cyan,
+      blue,
+      purple,
+      red
+    ),
+    url('/static/home/img/ivy.jpg');
+  background-blend-mode: multiply;
+  background-repeat: repeat;
+  margin-bottom: 1rem;
+  flex-direction: row;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+
+  .navbar-brand {
+    height: 70px;
+    padding: 0;
+  }
+
+  .fas,
+  .fab,
+  .nav-item {
+    font-size: 1.5rem;
+  }
 
   .social {
-    position: absolute;
-    right: 4rem;
-    top: 38px;
+    margin: 0;
+    height: 70px;
 
     li {
-      display: inline;
+      &,
+      & a {
+        display: inline-block;
+        height: 70px;
+      }
 
       a {
-        padding: 0 0.25rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 0.75rem;
         color: $text-color;
         @include transition-color(0.5s);
+
+        &:hover {
+          text-decoration: none;
+        }
+
+        i {
+          text-shadow: 0 0 4px black;
+        }
       }
 
       a:hover {
@@ -33,6 +76,7 @@ nav {
   }
 
   #navbarCollapse {
+    flex-grow: 0;
     display: none;
   }
 
@@ -43,7 +87,7 @@ nav {
       text-align: center;
 
       a.nav-link {
-        background-color: $document-background-color;
+        background-color: rgba(0, 0, 0, 75%);
         border-radius: 0.25rem;
         margin-top: 0.5rem;
         color: $text-color !important;
@@ -57,23 +101,20 @@ nav {
   }
 }
 
-@media (min-width: $breakpoint-md) {
+@media (min-width: $breakpoint-lg) {
   nav {
-    .social {
-      right: 29rem;
-    }
-
     ul .nav-item a.nav-link {
       background-color: unset;
       margin-top: 0;
       padding: 0 0.5rem;
       line-height: 70px;
       vertical-align: middle;
+      text-shadow: 0 0 4px black;
       @include transition-color(0.5s);
-    }
 
-    ul .nav-item a.nav-link:hover {
-      color: $red !important;
+      &:hover {
+        color: $red !important;
+      }
     }
 
     #navbarCollapse {
