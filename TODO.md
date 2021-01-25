@@ -2,7 +2,6 @@
 
 ## High Priorities
 
-- Update ticketing page to address COVID-19
 - Update footer
   - Change color of separator
   - Adjust width for name change
