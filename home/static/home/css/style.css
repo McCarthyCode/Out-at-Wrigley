@@ -49,22 +49,47 @@
 }
 
 nav {
-  background-color: black;
   position: relative;
+  background-image: linear-gradient(30deg, #7c9b68, #7c9b68), url("/static/home/img/ivy.jpg");
+  background-blend-mode: multiply;
+  background-repeat: repeat;
+  margin-bottom: 1rem;
+  flex-direction: row;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+nav .navbar-brand {
+  height: 70px;
+  padding: 0;
+}
+nav .fas,
+nav .fab,
+nav .nav-item {
+  font-size: 1.5rem;
 }
 nav .social {
-  position: absolute;
-  right: 4rem;
-  top: 38px;
+  margin: 0;
+  height: 70px;
 }
-nav .social li {
-  display: inline;
+nav .social li, nav .social li a {
+  display: inline-block;
+  height: 70px;
 }
 nav .social li a {
-  padding: 0 0.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 0.75rem;
   color: white;
   -webkit-transition: color 0.5s;
   transition: color 0.5s;
+}
+nav .social li a:hover {
+  text-decoration: none;
+}
+nav .social li a i {
+  text-shadow: 0 0 4px black;
 }
 nav .social li a:hover {
   color: #649fd1;
@@ -78,6 +103,10 @@ nav button {
 nav button:hover {
   color: #ed1c1d !important;
 }
+nav #navbarCollapse {
+  flex-grow: 0;
+  display: none;
+}
 nav ul {
   font-family: "Amaranth", Helvetica, Arial, sans-serif;
 }
@@ -85,7 +114,7 @@ nav ul .nav-item {
   text-align: center;
 }
 nav ul .nav-item a.nav-link {
-  background-color: #333333;
+  background-color: rgba(0, 0, 0, 0.75);
   border-radius: 0.25rem;
   margin-top: 0.5rem;
   color: white !important;
@@ -96,21 +125,22 @@ nav ul .nav-item a.nav-link:hover {
   color: #ed1c1d !important;
 }
 
-@media (min-width: 768px) {
-  nav .social {
-    right: 29rem;
-  }
+@media (min-width: 992px) {
   nav ul .nav-item a.nav-link {
     background-color: unset;
     margin-top: 0;
     padding: 0 0.5rem;
     line-height: 70px;
     vertical-align: middle;
+    text-shadow: 0 0 4px black;
     -webkit-transition: color 0.5s;
     transition: color 0.5s;
   }
   nav ul .nav-item a.nav-link:hover {
     color: #ed1c1d !important;
+  }
+  nav #navbarCollapse {
+    display: inline;
   }
 }
 #imageSlider {
@@ -370,7 +400,7 @@ footer.footer p, footer.footer a {
   font-size: 0.75rem;
 }
 footer.footer .footer-list {
-  max-width: 14rem;
+  max-width: 12rem;
   position: relative;
   margin: auto;
   overflow: hidden;
@@ -390,7 +420,7 @@ footer.footer .footer-list li {
   margin: 0.25em 0;
   padding: 0 0.5rem;
   text-align: center;
-  border-left: 1px solid white;
+  border-left: 1px solid #333333;
 }
 
 .about-header img {
