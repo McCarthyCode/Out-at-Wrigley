@@ -1,0 +1,34 @@
+.contribute-forms {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 0.25rem;
+  margin-bottom: 2rem;
+  font-family: $font-body;
+
+  .donate,
+  .sponsor {
+    width: 100%;
+    margin-top: 1rem;
+    text-align: center;
+
+    select {
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-md) {
+  .contribute-forms {
+    flex-wrap: nowrap;
+
+    .donate {
+      padding-right: 0.5rem;
+    }
+
+    .sponsor {
+      padding-left: 0.5rem;
+    }
+  }
+}

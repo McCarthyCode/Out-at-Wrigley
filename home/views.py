@@ -52,11 +52,11 @@ def contests(request):
         'year': datetime.now(pytz.timezone(TIME_ZONE)).year,
     })
 
-def sponsors(request):
+def contribute(request):
     if request.method != 'GET':
         return HttpResponseBadRequest()
 
-    return render(request, 'home/sponsors.html', {
+    return render(request, 'home/contribute.html', {
         'name': NAME,
         'year': datetime.now(pytz.timezone(TIME_ZONE)).year,
     })

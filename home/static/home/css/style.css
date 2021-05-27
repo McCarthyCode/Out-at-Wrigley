@@ -101,7 +101,7 @@ nav button {
   transition: color 0.5s;
 }
 nav button:hover {
-  color: #ed1c1d !important;
+  color: #f66 !important;
 }
 nav #navbarCollapse {
   flex-grow: 0;
@@ -122,7 +122,7 @@ nav ul .nav-item a.nav-link {
   transition: color 0.5s;
 }
 nav ul .nav-item a.nav-link:hover {
-  color: #ed1c1d !important;
+  color: #f66 !important;
 }
 
 @media (min-width: 992px) {
@@ -137,7 +137,7 @@ nav ul .nav-item a.nav-link:hover {
     transition: color 0.5s;
   }
   nav ul .nav-item a.nav-link:hover {
-    color: #ed1c1d !important;
+    color: #f66 !important;
   }
   nav #navbarCollapse {
     display: inline;
@@ -428,6 +428,37 @@ footer.footer .footer-list li {
   width: 100%;
 }
 
+.contribute-forms {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 0.25rem;
+  margin-bottom: 2rem;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+.contribute-forms .donate,
+.contribute-forms .sponsor {
+  width: 100%;
+  margin-top: 1rem;
+  text-align: center;
+}
+.contribute-forms .donate select,
+.contribute-forms .sponsor select {
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .contribute-forms {
+    flex-wrap: nowrap;
+  }
+  .contribute-forms .donate {
+    padding-right: 0.5rem;
+  }
+  .contribute-forms .sponsor {
+    padding-left: 0.5rem;
+  }
+}
 .tickets {
   display: flex;
   flex-wrap: wrap;
