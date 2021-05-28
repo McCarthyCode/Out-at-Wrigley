@@ -1,6 +1,7 @@
-auth
-db.sqlite3
-.env
+/auth
+/db.sqlite3
+/.env
 *.pyc
 /static
-.vscode
+/.venv
+/.vscode
