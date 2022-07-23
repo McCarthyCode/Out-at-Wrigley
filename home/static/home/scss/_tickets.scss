@@ -1,7 +1,8 @@
 .tickets {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
+  gap: .5rem;
   padding: 0 0.25rem;
   margin-bottom: 2rem;
   font-family: $font-body;
@@ -12,6 +13,7 @@
 
   .vip, .bleacher {
     width: 100%;
+    max-width: 480px;
     margin-top: 1rem;
 
     header {
@@ -65,12 +67,12 @@
   .tickets {
     flex-wrap: nowrap;
 
-    .vip {
-      padding-right: 0.5rem;
-    }
+//     .vip {
+//       padding-right: 0.5rem;
+//     }
 
-    .bleacher {
-      padding-left: 0.5rem;
-    }
+//     .bleacher {
+//       padding-left: 0.5rem;
+//     }
   }
 }
