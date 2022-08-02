@@ -83,6 +83,10 @@ sup {
   top: 0;
 }
 
+em {
+  font-style: italic;
+}
+
 @media (min-width: $breakpoint-sm) {
   .content {
     img.float-left-sm {

@@ -7,10 +7,6 @@
   margin-bottom: 2rem;
   font-family: $font-body;
 
-  .bleacher ul.body {
-    height: 120px;
-  }
-
   .vip, .bleacher {
     width: 100%;
     max-width: 480px;
@@ -45,6 +41,10 @@
 
     footer {
       padding: 1rem 0;
+
+      .h6 {
+        margin-bottom: 1rem;
+      }
     }
 
     ul.body, footer {
@@ -66,13 +66,5 @@
 @media (min-width: $breakpoint-md) {
   .tickets {
     flex-wrap: nowrap;
-
-//     .vip {
-//       padding-right: 0.5rem;
-//     }
-
-//     .bleacher {
-//       padding-left: 0.5rem;
-//     }
   }
 }
