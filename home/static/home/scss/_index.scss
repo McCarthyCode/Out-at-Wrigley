@@ -10,6 +10,10 @@
   align-items: center;
 }
 
+h1.h1 {
+  margin: 1rem 0;
+}
+
 @media (min-width: $breakpoint-xl) {
   #grid {
     grid-template-columns: 1110px - 160px - 16px 160px;
