@@ -20,7 +20,7 @@ h1.h1 {
   }
 }
 
-@media (min-width: $breakpoint-lg) and (max-width: $breakpoint-xl - 1) {
+@media (min-width: $breakpoint-lg) and (max-width: calc($breakpoint-xl - 1px)) {
   #grid {
     grid-template-columns: 930px - 160px - 16px 160px;
   }

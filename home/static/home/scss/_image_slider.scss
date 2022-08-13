@@ -21,13 +21,13 @@ $images-max-height: $slider-height - (2 * $dropdown-height) - 16px;
   .nav {
     display: flex;
     position: absolute;
-    top: ($slider-height - $nav-size) / 2;
+    top: calc(($slider-height - $nav-size) / 2);
     justify-content: center;
     align-items: center;
     background-color: $nav-background-color;
     width: $nav-size;
     height: $nav-size;
-    border-radius: $nav-size / 2;
+    border-radius: calc($nav-size / 2);
     cursor: pointer;
 
     .fa {
@@ -59,7 +59,7 @@ $images-max-height: $slider-height - (2 * $dropdown-height) - 16px;
 
   .dropdown,
   #galleryIcon {
-    border-radius: $dropdown-height / 2;
+    border-radius: calc($dropdown-height / 2);
     background-color: $dropdown-background-color;
     line-height: $dropdown-height;
     text-align: center;
